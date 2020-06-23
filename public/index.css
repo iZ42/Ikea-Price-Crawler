@@ -1,0 +1,106 @@
+/* this file is loaded by index.html and styles the page */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.4em;
+}
+
+header {
+  background-color: #0d2ca8;
+  height: 120px; 
+  width: 100vw; 
+  margin: -1.5em -0.5em;
+}
+
+#header-title {
+  text-align: center;
+  font-size: 36px;
+  font-family: Arial;
+  color: #f2f2f2;
+  padding: 1.3em;
+}
+
+.section-header {
+  font-size: 18px;
+  margin-top: 1vh;
+  margin-bottom: 0.6vh;
+}
+
+#description-block {
+  font-family: Arial;
+  font-size: 16px; 
+  margin: 3em 4em 1.5em;
+}
+
+#yellow-bar {
+  height: 9px;
+  width: 100vw;
+  margin-left: -0.5em;
+  background-color: #edb600; 
+}
+
+#searchArea {
+  margin: 1.5em 4em; 
+}
+
+#use-note {
+  margin: 1em 4em;
+}
+
+form {
+  margin-left: 1em;
+}
+
+#searchBox {
+  font-family: monospace; 
+  font-size: 16px; 
+  font-weight: bold; 
+  border: 1px solid #8a8a8a;
+  height: 2em;
+  width: 84vw;
+  padding: 3px;
+  margin-left: -1em;
+  margin-bottom: 0.3em; 
+}
+
+#searchButton {
+  font-family: arial;
+  font-size: 15px;
+  border: 1px solid #757575; 
+  height: 1.8em;
+  width: 84vw;
+  padding: 3px;
+  margin-left: -1em;
+}
+
+form button {
+  background-color: #bbbbf2;
+  border: 2px solid currentColor;
+  border-radius: .25em;
+  cursor: pointer;
+  font-size: inherit;
+  line-height: 1.4em;
+  padding: 0.25em 1em;
+  max-width: 20ch;
+}
+
+form button:hover {
+  border: 2px solid #0339fc;
+}
+
+#use-note {
+  font-size: 15px; 
+  margin: 1em 5em;
+}
+
+footer {
+  font-size: 13px;
+  width: 87vw;
+  margin-left: 4em;
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid lightgrey;
+}

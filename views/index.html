@@ -1,0 +1,61 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+    <meta charset="utf-8">
+    <title>Welcome to Glitch!</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    -->
+    <!-- import the webpage's stylesheets -->
+    <link rel="stylesheet" href="/public/index.css">
+
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1 id="header-title"><b>IKEA Review Collector</b></h1>
+    </header>
+    <div id="blue-line"></div>
+    <main>
+      <div id="description-block">
+        <h4 class="section-header">About This Page</h4>
+        <p id="description">
+          Puzzled over the lack of buyer reviews on the Singapore IKEA website? Browsing in IKEA when something catches
+          your eye, but you are hesitant to purchase it over concerns of the product's quality? Never fear - this small project
+          allows you to capitalise on some of the collective wisdom of Ikea buyers from around the world!  
+        </p>
+        <h4 class="section-header">How To Use:</h4>
+        <p id="use-instruct">
+          Simply type a product name to search for on the IKEA SG site. The search results will be
+          presented and you can choose a product from there to collate reviews for. Due to technical limitations, 
+          results may take some time to collate and display. 
+        </p>
+      </div>
+      <div id="yellow-bar"></div>
+      <div id="searchArea">
+        <p><b><i>Search for product here:</i></b></p>
+        <form action="/" method="post" id="newSearch">
+          <input type="text" placeholder="Product Name" id="searchBox" name="searchName" required="">
+          <input type="submit" value="Search" id="searchButton">        
+        </form> 
+      </div>
+      <p id="use-note">
+        <i>Search terms should be as specific as possible (omitting product dimensions) e.g. "NORDLI bed frame" instead of "NORDLI". </i>
+      </p>
+      
+    </main>
+
+    <footer>A project by Isaac Koh. Made with <a href="https://glitch.com">Glitch</a>!</footer>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix 
+    <div class="glitchButton" style="position:fixed;top:2em;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>-->
+  </body>
+</html>

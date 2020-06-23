@@ -1,0 +1,167 @@
+header {
+  background-color: #0d2ca8;
+  height: 120px; 
+  width: 100vw; 
+  margin: -1.85em -0.5em;
+  line-height: 1.4em;
+}
+
+#header-title {
+  text-align: center;
+  font-size: 36px;
+  font-family: Arial;
+  color: #f2f2f2;
+  padding-top: 1.3em;
+}
+
+#description-block {
+  font-family: Arial;
+  margin: 5em 4em 1.5em;
+  line-height: 1.4em;
+}
+
+.section-header {
+  font-size: 22px;
+}
+
+#description-txt {
+  font-size: 16px;
+}
+
+#description-note {
+  font-size: 16px;
+}
+
+form {
+  margin-left: 4.5em;
+}
+
+#searchBox {
+  font-family: monospace; 
+  font-size: 16px; 
+  font-weight: bold; 
+  border: 1px solid #8a8a8a;
+  height: 1.5em;
+  width: 30em;
+  padding: 3px;
+}
+
+#searchBtn {
+  font-size: 16px;
+  height: 2.1em;
+  width: 7em;
+  padding: 3px;
+}
+
+#yellow-bar {
+  height: 0.8vh;
+  width: 100vw;
+  margin-top: 1em;
+  margin-left: -0.5em;
+  background-color: #edb600; 
+}
+
+#resultArea {
+  width: 90%;
+  height: auto;
+}
+
+.reviewListing {
+  font-family: Arial;
+  margin: 0.3em;
+  border: 1px solid #cad6eb;
+  border-radius: 3px;
+  padding: 0.7em;
+  display: flex;
+  align-items: center;
+  width: 50em;
+  height: 8em;
+}
+
+.listingInfo {
+  padding: 0.25em;
+  margin-left: 0.3em;
+  flex: 1.6;
+  order: 1;
+  text-align: left;
+}
+
+.countryName {
+  font-weight: bold;
+  font-size: 17px; 
+  font-family: arial;
+}
+
+.prodname {
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.prodtype {
+  font-size: 16px;
+}
+
+.ratingBox {
+  flex: 1;
+  order: 2;
+  height: 4.5em;
+  margin-left: 0.2em;
+  margin-top: -1em;
+  text-align: center;
+  font-weight: bold;
+  color: #696969;
+}
+
+.imgBox {
+  flex: 1.5;
+  order: 3;
+  align-content: center;
+  text-align: center; 
+}
+
+img {
+  max-height: 9em;;
+  width: auto;
+}
+
+a {
+  text-decoration: inherit; /* no underline */
+}
+
+.viewOrig {
+  flex: 0.6;
+  order: 4;
+  text-align: center;
+  height: 2em;
+  margin-top: -1.2em;
+  color: #0d2ca8;
+}
+
+.viewOrig:hover {
+  color: #edb600;
+}
+
+.material-icons.md-60 { 
+  font-size: 60px; 
+}
+
+#loading-img {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #0d2ca8;
+  border-right: 16px solid white;
+  border-bottom: 16px solid #edb600;
+  border-left: 16px solid white;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 61vh;
+  left: 47vw
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

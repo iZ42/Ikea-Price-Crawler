@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- import stylesheets --> 
+    <link rel="stylesheet" href="/public/search.css">
+    <!-- import google icon library --> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h2 id="header-title">IKEA Review Collector</h2>
+    </header>
+    <main>
+      <div id="description-block">
+        <h4 class="section-header">Search Results:</h4>
+        <p id="description-txt">
+          Select one of the following products to retrieve review scores from IKEA's US, GB, and AUS websites. 
+          You may also choose to view the product on the IKEA SG website. 
+        </p>
+      </div>
+      <form id="newSearch" method="post">
+        <input type="text" id="searchBox" name="searchName" placeholder="Search for another product" required="">
+        <input type="submit" id="searchBtn" value="Search">
+      </form><br>
+      <div id="yellow-bar"></div>
+      <div id="resultArea"></div>
+    </main>
+  </body>
+  <div id="loading-img"></div>
+</html>
+
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+<script>
+  // Loading animation to play while waiting
+  $(document).ready(function () {
+    $(document).ajaxStart(function () {
+        $("#loading-img").show();
+    }).ajaxStop(function () {
+        $("#loading-img").hide();
+    });
+  });
+
+  $(function() {
+    let productName = window.location.pathname.slice(8).replace(/%20/g, ' ');
+    $('#newSearchString').attr('placeholder', productName);
+    $.ajax({
+      type: "GET",
+      url: "/query/" + window.location.pathname.slice(8),
+      success: function(prodInfoArr)
+      { 
+        let prodList = [];
+        
+        prodInfoArr.forEach(function (obj) {
+          
+          let listing = ['<div class="listing">'];
+          // Create query string variable containing search terms, product name, product type
+          let ogSearch = window.location.pathname.slice(8);
+          let prodName = obj.name.trim().replace(/\s/g, "%20");
+          let prodType = obj.type.trim().replace(/\s+/g, " ").replace(/\s/g, "%20");  
+          let queryStr = 'findreviews?orig_search=' + ogSearch + '&name=' + prodName + '&type=' + prodType; 
+          
+          listing.push('<div class="listingInfo">');
+          listing.push('<p class="prodname">' + obj.name + '</p>');
+          listing.push('<p class="prodtype">' + obj.type + '</p></div>');
+          listing.push('<div class="imgBox"><img src="' + obj.img + '"></div>')
+          listing.push('<a class="viewBtn" href="' + obj.link + '" target="_blank">View</a>');
+          listing.push('<a class="selectBtn" href="https://ikea-price-crawler.glitch.me/' + queryStr + '"><i class="material-icons md-48">done</i></a>');
+          listing.push('</div>');
+          
+          prodList.push(listing.join(''));
+        });
+        $('#resultArea').html(prodList);
+      }
+    })
+  });
+</script>

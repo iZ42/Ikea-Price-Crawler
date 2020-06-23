@@ -1,0 +1,161 @@
+/* Page styling for search.html */
+
+header {
+  background-color: #0d2ca8;
+  height: 120px; 
+  width: 100vw; 
+  margin: -1.85em -0.5em;
+  line-height: 1.4em;
+}
+
+#header-title {
+  text-align: center;
+  font-size: 36px;
+  font-family: Arial;
+  color: #f2f2f2;
+  padding-top: 1.3em;
+}
+
+#description-block {
+  font-family: Arial;
+  margin: 5em 4em 1.5em;
+  line-height: 1.4em;
+}
+
+.section-header {
+  font-size: 22px;
+}
+
+#description-txt {
+  font-size: 16px;
+}
+
+form {
+  margin-left: 4.5em;
+}
+
+#searchBox {
+  font-family: monospace; 
+  font-size: 16px; 
+  font-weight: bold; 
+  border: 1px solid #8a8a8a;
+  height: 1.5em;
+  width: 30em;
+  padding: 3px;
+}
+
+#searchBtn {
+  font-size: 16px;
+  height: 2.1em;
+  width: 7em;
+  padding: 3px;
+}
+
+#yellow-bar {
+  height: 0.8vh;
+  width: 100vw;
+  margin-top: 1em;
+  margin-left: -0.5em;
+  background-color: #edb600; 
+}
+
+#resultArea {
+  margin: 3vh 4vw 
+}
+
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+.listing {
+  font-family: Arial;
+  margin: 0.3em;
+  border: 1px solid #cad6eb;
+  border-radius: 3px;
+  padding: 0.7em;
+  display: flex;
+  align-items: center;
+  width: 45em;
+  height: 6em;
+}
+
+.prodname {
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.prodtype {
+  font-size: 16px;
+}
+
+.listingInfo {
+  padding: 0.25em;
+  margin: -1em 1.2em;
+  flex: 3;
+}
+
+.imgBox {
+  flex: 1.2;
+  align-content: center;
+  text-align: center; 
+}
+
+img {
+  max-height: 6em;;
+  width: auto;
+}
+
+.viewBtn {
+  padding: 0.5em;
+  text-align: center;
+  flex: 0.6;
+  height: 4em;
+  margin: 0em 0.2em;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 4em;
+  color: #0d2ca8;
+}
+
+.viewBtn:hover {
+  color: #edb600;
+}
+
+.selectBtn {
+  padding: 0.5em;
+  text-align: center;
+  flex: 0.6;
+  height: 4em;
+  color: #0d2ca8;
+  line-height: 4em;
+}
+
+.selectBtn:hover {
+  color: #edb600;
+}
+
+.material-icons.md-48 { 
+  font-size: 48px; 
+}
+
+#loading-img {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #0d2ca8;
+  border-right: 16px solid white;
+  border-bottom: 16px solid #edb600;
+  border-left: 16px solid white;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 60vh;
+  left: 47vw
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

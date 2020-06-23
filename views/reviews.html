@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- import stylesheets --> 
+    <link rel="stylesheet" href="/public/reviews.css">
+    <!-- import google icon library --> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+     <header>
+      <h2 id="header-title">IKEA Review Collector</h2>
+    </header>
+     <main>
+      <div id="description-block">
+        <h4 class="section-header">Product Reviews Found:</h4>
+        <p id="description-txt">
+          Review scores collated from IKEA websites in the United States, Great Britain, and Australia respectively.
+          Select any of the following results to view the product on the original IKEA country website. 
+        </p>
+        <p id="description-note"><i>
+          If the listing returns an undefined product name and/or information, that product does not exist on that
+          country's IKEA website or is named differently. 
+        </i></p>
+      </div>
+      <form id="newSearch" method="post">
+        <input type="text" id="searchBox" name="searchName" placeholder="Search for another product" required="">
+        <input type="submit" id="searchBtn" value="New Search">
+      </form><br>
+      <div id="yellow-bar"></div>
+      <div id="reviewArea"></div>
+    </main> 
+  </body>
+  <div id="loading-img"></div>
+</html>
+
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+<script>
+  // Loading animation to play while waiting
+  $(document).ready(function () {
+    $(document).ajaxStart(function () {
+        $("#loading-img").show();
+    }).ajaxStop(function () {
+        $("#loading-img").hide();
+    });
+  });
+  
+  $(function() {
+    $.ajax({
+      type: "GET",
+      url: "/reviews/" + window.location.search,
+      success: function(reviewArr) {
+        
+        let reviewList = [];
+        reviewArr.forEach(function (obj) {
+        
+          let reviewItem = ['<div class="reviewListing">'];
+          
+          reviewItem.push(
+            '<div class="listingInfo"><p class="countryName"><i>' + obj.country + '</i></p><h4 class="prodname">' + obj.name + '</h4><p class="prodtype">' + obj.type + ' ' + obj.size + '</p></div><div class="ratingBox"><p class="reviewScore">Review Score: ' + obj.rating + '</p><p class="ratingCount">' + obj.ratingCount + ' Ratings</p></div><div class="imgBox"><img src="' + obj.img + '"></div><div class="viewOrig"><a href="' + obj.origLink + '" target="_blank"><i class="material-icons md-60">arrow_right_alt</i></a></div></div>'
+          );
+          
+          reviewList.push(reviewItem.join(''));
+        });
+        console.log(reviewList);
+        $('#reviewArea').html(reviewList);
+      }
+    })
+  });
+</script> 
